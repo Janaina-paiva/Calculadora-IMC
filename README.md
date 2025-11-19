@@ -22,8 +22,4 @@ JavaScript (ES6)
 Cálculo correto: IMC = peso / (altura em metros)².
 Valores válidos: peso entre 10–600 kg, altura entre 30–300 cm.
 
-Histórico salvo apenas enquanto a página está aberta.
-
-Interface funciona bem em celular e desktop.
-
 
