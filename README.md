@@ -25,3 +25,5 @@ Valores válidos: peso entre 10–600 kg, altura entre 30–300 cm.
 Histórico salvo apenas enquanto a página está aberta.
 
 Interface funciona bem em celular e desktop.
+
+http://127.0.0.1:3000/index.html?serverWindowId=af64d3df-1445-41da-ac38-2e7a8406b077
