@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HealthCalc - Calculadora de IMC e Dieta</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <h1>🍏 HealthCalc</h1>
+    <nav>
+      <ul>
+        <li><a href="#home">Início</a></li>
+        <li><a href="#imc-calc">IMC</a></li>
+        <li><a href="#diet-reg">Dieta</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="imc-calc" class="card">
+      <h2>Calculadora de IMC</h2>
+
+      <figure class="multimedia">
+        <img src="img/imc-icon.png" alt="Ícone de balança e fita métrica" width="100">
+      </figure>
+
+      <form id="form-imc">
+        <div>
+          <label for="peso">Peso (kg):</label>
+          <input type="number" id="peso" name="peso" step="0.01" required placeholder="Ex: 75.5">
+        </div>
+        <div>
+          <label for="altura">Altura (m):</label>
+          <input type="number" id="altura" name="altura" step="0.01" required placeholder="Ex: 1.75">
+        </div>
+        <button type="submit">Calcular IMC</button>
+      </form>
+
+      <div id="resultado-imc" class="resultado-box">
+        <p>Seu resultado aparecerá aqui.</p>
+      </div>
+    </section>
+
+    <section id="diet-reg" class="card">
+      <h2>Registro de Dieta</h2>
+      <form id="form-dieta">
+        <div>
+          <label for="alimento">Nome do Alimento:</label>
+          <input type="text" id="alimento" name="alimento" required>
+        </div>
+        <div>
+          <label for="tipo">Tipo de Refeição:</label>
+          <select id="tipo" name="tipo" required>
+            <option value="">Selecione...</option>
+            <option value="cafe">Café da Manhã</option>
+            <option value="almoco">Almoço</option>
+            <option value="janta">Jantar</option>
+            <option value="snack">Lanche</option>
+          </select>
+        </div>
+        <div>
+          <label for="calorias">Calorias (kcal):</label>
+          <input type="number" id="calorias" name="calorias" required>
+        </div>
+        <div>
+          <label for="proteinas">Proteínas (g):</label>
+          <input type="number" id="proteinas" name="proteinas" required>
+        </div>
+        <button type="submit" id="add-alimento">Adicionar à Dieta</button>
+      </form>
+
+      <h3>Sua Lista de Refeições</h3>
+      <div id="lista-dieta" class="lista-box">
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 HealthCalc | Projeto Front-end</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

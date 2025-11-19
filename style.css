@@ -1,0 +1,175 @@
+/*
+ * REQUISITO: Folha de estilo externa (.css)
+ */
+
+/* Estilos Globais */
+:root {
+  --primary-color: #4caf50; /* Verde */
+  --secondary-color: #8bc34a; /* Verde Claro */
+  --accent-color: #ff9800; /* Laranja */
+  --bg-color: #f4f4f4;
+  --text-color: #333;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Arial", sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* HEADER e NAV - Uso de Flexbox para Menu */
+header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  font-size: 1.5em;
+}
+
+nav ul {
+  list-style: none;
+  display: flex; /* Flexbox para alinhar itens do menu */
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease; /* Efeito de Transição */
+}
+
+nav a:hover {
+  color: var(--accent-color); /* Efeito Hover */
+}
+
+/* MAIN - Uso de Grid para o Layout Principal (Responsividade) */
+main {
+  display: grid;
+  grid-template-columns: 1fr; /* Padrão Mobile: uma coluna */
+  gap: 30px;
+  padding: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Efeito Sombra */
+}
+
+.card h2 {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  border-bottom: 2px solid var(--secondary-color);
+  padding-bottom: 5px;
+}
+
+/* Formulários e Inputs */
+#form-imc,
+#form-dieta {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+/* Botões */
+button {
+  background-color: var(--accent-color);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.1s; /* Efeito de Transição */
+}
+
+button:hover {
+  background-color: #e08e00; /* Hover */
+  transform: translateY(-1px);
+}
+
+.resultado-box,
+.lista-box {
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-top: 15px;
+  background-color: #fffaf0; /* Leve destaque */
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 15px;
+  background-color: var(--primary-color);
+  color: white;
+  margin-top: 20px;
+}
+
+/* * REQUISITO: Media Queries para Responsividade (Mobile para Desktop) 
+ */
+@media (min-width: 768px) {
+  main {
+    /* Layout Desktop: Duas colunas */
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Uso de Flexbox para campos do formulário em desktop (opcional, mas comum) */
+  #form-imc > div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Para a Dieta, podemos usar Grid para alinhar campos em uma linha */
+  #form-dieta {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Alimento e Tipo na primeira linha */
+    gap: 15px;
+  }
+
+  #form-dieta > div:nth-child(3),
+  #form-dieta > div:nth-child(4) {
+    /* Calorias e Proteínas na segunda linha */
+    grid-column: span 1;
+  }
+
+  #add-alimento {
+    grid-column: span 2; /* O botão ocupa duas colunas */
+  }
+}
